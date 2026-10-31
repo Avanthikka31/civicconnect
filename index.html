@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CivicConnect is a frontend prototype for discovering public schemes and tracking applications.">
+  <title>CivicConnect | Citizen Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CivicConnect home"><span class="brand-mark">C</span><span>CivicConnect</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#schemes">Schemes</a>
+      <a href="#tracker">Track application</a>
+    </nav>
+    <button class="menu-button" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PUBLIC SERVICES, MADE SIMPLER</p>
+        <h1>Government services.<br><span>Within your reach.</span></h1>
+        <p class="hero-text">Find useful public schemes, explore citizen services and check the progress of an application in one simple place.</p>
+        <a class="primary-button" href="#services">Explore services <span aria-hidden="true">→</span></a>
+        <p class="prototype-note">Student-built frontend prototype · Uses sample information only</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle"></div>
+        <div class="art-card card-one"><span class="art-icon">✓</span><div><b>Application received</b><small>Sample status</small></div></div>
+        <div class="art-card card-two"><span class="art-icon orange">⌂</span><div><b>Citizen services</b><small>Easy to explore</small></div></div>
+        <div class="art-stat"><strong>01</strong><span>One place to<br>start</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <div><p class="eyebrow">EXPLORE</p><h2>Services for citizens</h2></div>
+        <p>Choose a category to learn what information may be needed.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card"><span class="service-icon purple">▤</span><h3>Certificates</h3><p>Explore common certificate services and their basic requirements.</p><button class="text-button" data-info="Certificates">View details →</button></article>
+        <article class="service-card"><span class="service-icon green">♧</span><h3>Welfare support</h3><p>Find sample information about citizen welfare programmes.</p><button class="text-button" data-info="Welfare support">View details →</button></article>
+        <article class="service-card"><span class="service-icon yellow">⌂</span><h3>Housing</h3><p>Review example housing assistance information and documents.</p><button class="text-button" data-info="Housing">View details →</button></article>
+        <article class="service-card"><span class="service-icon blue">▣</span><h3>Education</h3><p>Explore sample scholarship and education-support information.</p><button class="text-button" data-info="Education">View details →</button></article>
+      </div>
+    </section>
+
+    <section class="scheme-section" id="schemes">
+      <div class="section-heading">
+        <div><p class="eyebrow">INFORMATION</p><h2>Featured schemes</h2></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="schemeSearch" type="search" placeholder="Search schemes..." aria-label="Search schemes"></label>
+      </div>
+      <div class="scheme-grid" id="schemeGrid">
+        <article class="scheme-card" data-search="education student scholarship"><div class="scheme-tag">EDUCATION</div><h3>Student Learning Support</h3><p>Illustrative information about financial support for eligible students.</p><span class="scheme-meta">Sample programme</span></article>
+        <article class="scheme-card" data-search="senior citizen pension welfare"><div class="scheme-tag orange-tag">WELFARE</div><h3>Senior Citizen Assistance</h3><p>Illustrative information about support services for older residents.</p><span class="scheme-meta">Sample programme</span></article>
+        <article class="scheme-card" data-search="housing home residence"><div class="scheme-tag green-tag">HOUSING</div><h3>Affordable Housing Guidance</h3><p>Illustrative information about housing-related public support.</p><span class="scheme-meta">Sample programme</span></article>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>No matching sample schemes. Try another search.</p>
+    </section>
+
+    <section class="tracker-section" id="tracker">
+      <div class="tracker-copy"><p class="eyebrow">APPLICATION TRACKER</p><h2>Know where your application stands.</h2><p>Enter the sample reference number below to see how a status tracker could work. This demo does not connect to a government database.</p><div class="tracker-tip">Demo reference: <strong>CC2026001</strong></div></div>
+      <form class="tracker-form" id="trackerForm">
+        <label for="reference">Application reference number</label>
+        <input id="reference" name="reference" placeholder="e.g. CC2026001" required>
+        <button class="primary-button" type="submit">Check status <span aria-hidden="true">→</span></button>
+        <div class="status-result" id="statusResult" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="contact-section">
+      <div><p class="eyebrow">BUILT AROUND ACCESSIBILITY</p><h2>Clear information is the first step to better access.</h2></div>
+      <p>This prototype demonstrates a simple, responsive interface. Always verify eligibility, documents and deadlines on the relevant official government website.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">C</span><span>CivicConnect</span></a><span>Independent student prototype · Not an official government website</span><span>© 2026 CivicConnect</span></footer>
+  <div class="modal-backdrop" id="modal" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><p class="eyebrow">SERVICE INFORMATION</p><h2 id="modalTitle"></h2><p id="modalText"></p><button class="primary-button" id="modalOk">Got it</button></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
